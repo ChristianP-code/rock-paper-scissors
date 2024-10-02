@@ -13,4 +13,10 @@ switch(getRandomNbr) {
     }
 //console.log(getRandomNbr);
 }
-getComputerChoice();
+
+function getHumanChoice() {
+let getInput = window.prompt("Make your choice! Type rock, paper, or scissors:");
+
+}
+
+getHumanChoice();
