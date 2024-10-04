@@ -27,10 +27,10 @@ function getHumanChoice() {
                 return "scissors";    
             default:
                 alert("That\'s not quite right. Try typing rock, paper or scissors!");
-            getHumanChoice();
+                getHumanChoice();
         }
 }
-getHumanChoice();
+
 
 let humanScore = 0;
 let computerScore = 0;
@@ -61,7 +61,9 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-const humanSelection = getHumanChoice;
-const computerSelection = getComputerChoice;
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+console.log(humanSelection);
+console.log(computerSelection);
 
 playRound(humanSelection, computerSelection);
