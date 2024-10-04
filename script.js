@@ -43,7 +43,7 @@ console.log(computerSelection);
 function playGame (){
     let humanScore = 0;
     let computerScore = 0;
-    let numberOfRounds = 0;
+    let roundsRemaining = 5;
 
     function playRound(humanChoice, computerChoice) {
 
@@ -72,16 +72,16 @@ function playGame (){
         }
         
 
-    while (numberOfRounds <= 5) {
+    while (roundsRemaining >= 1) {
 
         getComputerChoice();
         getHumanChoice();
         playRound(humanSelection, computerSelection);
-        numberOfRounds++;
+        roundsRemaining--;
     }
 
     console.log(`Your score: ${humanScore} : ${computerScore} Computer score`);
-    console.log(`Number of rounds remaining: ${numberOfRounds}`)
+    console.log(`Number of rounds remaining: ${roundsRemaining}`)
 }
 
 playGame();
