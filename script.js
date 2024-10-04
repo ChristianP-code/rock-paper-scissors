@@ -34,31 +34,6 @@ function getHumanChoice() {
 
 
 
-function playRound(humanChoice, computerChoice) {
-
-// RPS game logic:   
-// if human and computer choices are the same, it's a draw and no score increment
-// human rock vs comp scissors = win, so increment human score
-// human paper vs rock = win, so increment human score
-// human scissors vs paper = win, so increment human score
-// anything else is a human loss, so increment computer score
-
-    if (humanSelection === computerSelection) {
-        console.log(`It\'s a draw! You both chose ${humanSelection}!`);
-    } else if (humanSelection === "rock" && computerSelection === "scissors") {
-        console.log(`You win! ${humanSelection} beats ${computerSelection}!`);
-        humanScore++;
-    } else if (humanSelection === "paper" && computerSelection === "rock"){
-        console.log(`You win! ${humanSelection} beats ${computerSelection}!`);
-        humanScore++;
-    } else if (humanSelection === "scissors" && computerSelection === "paper") {
-        console.log(`You win! ${humanSelection} beats ${computerSelection}!`);
-        humanScore++;
-    } else {
-        console.log(`You lose! ${computerSelection} beats ${humanSelection}!`)
-        computerScore++;
-    }
-}
 
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
@@ -66,10 +41,47 @@ console.log(humanSelection);
 console.log(computerSelection);
 
 function playGame (){
-    
     let humanScore = 0;
     let computerScore = 0;
-    playRound(humanSelection, computerSelection);
+    let numberOfRounds = 0;
 
-    console.log(humanScore, computerScore);
+    function playRound(humanChoice, computerChoice) {
+
+        // RPS game logic:   
+        // if human and computer choices are the same, it's a draw and no score increment
+        // human rock vs comp scissors = win, so increment human score
+        // human paper vs rock = win, so increment human score
+        // human scissors vs paper = win, so increment human score
+        // anything else is a human loss, so increment computer score
+        
+            if (humanSelection === computerSelection) {
+                console.log(`It\'s a draw! You both chose ${humanSelection}!`);
+            } else if (humanSelection === "rock" && computerSelection === "scissors") {
+                console.log(`You win! ${humanSelection} beats ${computerSelection}!`);
+                humanScore++;
+            } else if (humanSelection === "paper" && computerSelection === "rock"){
+                console.log(`You win! ${humanSelection} beats ${computerSelection}!`);
+                humanScore++;
+            } else if (humanSelection === "scissors" && computerSelection === "paper") {
+                console.log(`You win! ${humanSelection} beats ${computerSelection}!`);
+                humanScore++;
+            } else {
+                console.log(`You lose! ${computerSelection} beats ${humanSelection}!`)
+                computerScore++;
+            }
+        }
+        
+
+    while (numberOfRounds <= 5) {
+
+        getComputerChoice();
+        getHumanChoice();
+        playRound(humanSelection, computerSelection);
+        numberOfRounds++;
+    }
+
+    console.log(`Your score: ${humanScore} : ${computerScore} Computer score`);
+    console.log(`Number of rounds remaining: ${numberOfRounds}`)
 }
+
+playGame();
