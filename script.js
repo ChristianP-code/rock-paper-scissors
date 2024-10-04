@@ -32,21 +32,21 @@ function getHumanChoice() {
 }
 
 
+function playGame() {
 
-
-
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-console.log(humanSelection);
-console.log(computerSelection);
-
-function playGame (){
     let humanScore = 0;
     let computerScore = 0;
     let roundsRemaining = 5;
+    let computerSelection;
+    let humanSelection;
+    
+    console.log(humanSelection);
+    console.log(computerSelection);
 
     function playRound(humanChoice, computerChoice) {
 
+        // playRound returns a console message depending on outcome of the game logic
+        // and increments the score variables as appropriate
         // RPS game logic:   
         // if human and computer choices are the same, it's a draw and no score increment
         // human rock vs comp scissors = win, so increment human score
@@ -72,16 +72,18 @@ function playGame (){
         }
         
 
-    while (roundsRemaining >= 1) {
 
-        getComputerChoice();
-        getHumanChoice();
+    while (roundsRemaining >= 1) {
+        computerSelection = getComputerChoice();
+        humanSelection = getHumanChoice();
         playRound(humanSelection, computerSelection);
         roundsRemaining--;
+        console.log(`Your score ${humanScore} : ${computerScore} Computer score`);
+        console.log(`Number of rounds remaining: ${roundsRemaining}`);
+
     }
 
-    console.log(`Your score: ${humanScore} : ${computerScore} Computer score`);
-    console.log(`Number of rounds remaining: ${roundsRemaining}`)
+
 }
 
 playGame();
