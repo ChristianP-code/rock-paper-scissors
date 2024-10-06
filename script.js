@@ -1,5 +1,3 @@
-// this function should return a string of either: rock, paper or scissors
-
 function getComputerChoice() {
 let getRandomNbr = Math.floor(Math.random() * 3); 
 // Returns a random number between 0-2 inclusive
@@ -31,7 +29,6 @@ function getHumanChoice() {
         }
 }
 
-
 function playGame() {
 
     let humanScore = 0;
@@ -39,9 +36,6 @@ function playGame() {
     let roundsRemaining = 5;
     let computerSelection;
     let humanSelection;
-    
-    console.log(humanSelection);
-    console.log(computerSelection);
 
     function playRound(humanChoice, computerChoice) {
 
@@ -71,8 +65,6 @@ function playGame() {
             }
         }
         
-
-
     while (roundsRemaining >= 1) {
         computerSelection = getComputerChoice();
         humanSelection = getHumanChoice();
@@ -82,8 +74,6 @@ function playGame() {
         console.log(`Number of rounds remaining: ${roundsRemaining}`);
 
     }
-
-
 }
 
 playGame();
