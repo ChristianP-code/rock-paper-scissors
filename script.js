@@ -12,21 +12,26 @@ switch(getRandomNbr) {
 }
 
 function getHumanChoice() {
-    let getInput = window.prompt("Make your choice! Type rock, paper, or scissors:"); 
-        switch (getInput.toLowerCase()) {
-            case "rock":
-                alert("You\'ve chosen rock!"); //need to change alerts to console.log
-                return "rock";
-            case "paper":
-                alert("You\'ve chosen paper!");
-                return "paper";
-            case "scissors":
-                alert("You\'ve chosen scissors!");
-                return "scissors";    
-            default:
-                alert("That\'s not quite right. Try typing rock, paper or scissors!");
-                getHumanChoice();
-        }
+    let validInput = false;
+    while (validInput === false) {
+        let getInput = window.prompt("Make your choice! Type rock, paper, or scissors:"); 
+            switch (getInput.toLowerCase()) {
+                case "rock":
+                    alert("You\'ve chosen rock!"); //need to change alerts to console.log
+                    getInput = true;
+                    return "rock";
+                case "paper":
+                    alert("You\'ve chosen paper!");
+                    getInput = true;
+                    return "paper";
+                case "scissors":
+                    alert("You\'ve chosen scissors!");
+                    getInput = true;
+                    return "scissors";    
+                default:
+                    alert("That\'s not quite right. Try typing rock, paper or scissors!");
+            }
+    }
 }
 
 function playGame() {
