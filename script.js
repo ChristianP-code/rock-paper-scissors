@@ -12,24 +12,24 @@ switch(getRandomNbr) {
 }
 
 function getHumanChoice() {
-    let validInput = false;
+    let validInput = false; // loops the switch statement in case of invalid input
     while (validInput === false) {
         let getInput = window.prompt("Make your choice! Type rock, paper, or scissors:"); 
             switch (getInput.toLowerCase()) {
                 case "rock":
-                    alert("You\'ve chosen rock!"); //need to change alerts to console.log
-                    getInput = true;
-                    return "rock";
+                            alert("You\'ve chosen rock!"); 
+                            getInput = true;
+                            return "rock";
                 case "paper":
-                    alert("You\'ve chosen paper!");
-                    getInput = true;
-                    return "paper";
+                            alert("You\'ve chosen paper!");
+                            getInput = true;
+                            return "paper";
                 case "scissors":
-                    alert("You\'ve chosen scissors!");
-                    getInput = true;
-                    return "scissors";    
+                            alert("You\'ve chosen scissors!");
+                            getInput = true;
+                            return "scissors";    
                 default:
-                    alert("That\'s not quite right. Try typing rock, paper or scissors!");
+                            alert("That\'s not quite right. Try typing rock, paper or scissors!");
             }
     }
 }
@@ -43,15 +43,6 @@ function playGame() {
     let humanSelection;
 
     function playRound(humanChoice, computerChoice) {
-
-        // playRound returns a console message depending on outcome of the game logic
-        // and increments the score variables as appropriate
-        // RPS game logic:   
-        // if human and computer choices are the same, it's a draw and no score increment
-        // human rock vs comp scissors = win, so increment human score
-        // human paper vs rock = win, so increment human score
-        // human scissors vs paper = win, so increment human score
-        // anything else is a human loss, so increment computer score
         
             if (humanSelection === computerSelection) {
                 console.log(`It\'s a draw! You both chose ${humanSelection}!`);
